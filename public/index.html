@@ -20,11 +20,33 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+<link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" />
+
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
+<div id="mocha"></div>
+
+<script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
+<script src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>
+
+<script>mocha.setup('bdd')</script>
+
+<script>
+function sum(a, b) {
+  return a + b;
+}
+
+describe('sum', function () {
+  it('should return sum of arguments', function () {
+    chai.expect(sum(1, 2)).to.equal(3);
+  });
+});
+
+mocha.run();
+</script>
     <div id="root"></div>
     <!--
       This HTML file is a template.
